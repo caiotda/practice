@@ -1,4 +1,4 @@
-Toy project partially inspired by React's official tictactoe tutorial (https://pt-br.reactjs.org/tutorial/tutorial.html).
+Toy project partially inspired by React's official tictactoe tutorial (https://reactjs.org/tutorial/tutorial.html).
 Although i didn't follow it through, it's definitely worth checking it out!
 
 
