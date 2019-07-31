@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    border: 1px solid black;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+  Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+body { 
+    margin:0;
+}
+
+body :not(#display){
+    text-align: center;
+}
+
+.botao{
+    font-size: 3em;
+    background-color: hsl(30, 5%, 83%);
+}
+
+.op {
+    color: white;
+    background-color: rgb(241, 161, 40);
+}
+
+
+
+#display {
+    font-size: 6em;
+    color: white;
+    background-color: black;
+    width: 100vw;
+    height: 5vh;
+}
+
+/* TODO : fazer alguma coisa bonitinha quando clicar num 
+numero, alguma animaçao sei la */
