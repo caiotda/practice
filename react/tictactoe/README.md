@@ -1,3 +1,8 @@
+Toy project partially inspired by React's official tictactoe tutorial (https://pt-br.reactjs.org/tutorial/tutorial.html).
+Although i didn't follow it through, it's definitely worth checking it out!
+
+
+---------------------------------------------------------------------------------------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
