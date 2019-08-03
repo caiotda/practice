@@ -1,3 +1,6 @@
+
+The classic toDo app! Although it's not very responsive, it was great building this to get the hang of Vue.js. 
+-----------------------------------------------------------------------
 # app
 
 ## Project setup
