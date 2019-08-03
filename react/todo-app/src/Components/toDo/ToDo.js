@@ -1,6 +1,7 @@
 import React, { useState, Fragment } from 'react';
-import ToDoItem from '../ToDoItem/ToDoItem'
-import Style from './ToDo.module.css'
+import ToDoItem from '../ToDoItem/ToDoItem';
+import InputText from '../InputText/InputText';
+import Style from './ToDo.module.css';
 
 const ToDo = (props) => {
 
@@ -12,6 +13,14 @@ const ToDo = (props) => {
         newList.splice(index, 1);
         updateList(newList);
     }
+
+    const addTaskHandler = (e) => {
+        const text = e.target.parentNode.firstChild.value;
+        const newList = [...list];
+        newList.push(text);
+        updateList(newList);
+    }
+
     let toDo = list.map( (task, index) => 
         <ToDoItem 
             item={task}
@@ -27,8 +36,9 @@ const ToDo = (props) => {
                 <ol>
                     {toDo}
                 </ol>
-
-                <input placeholder="What else?" />
+                <InputText 
+                    clicked={addTaskHandler}
+                />
             </div>
         </Fragment>
     )
