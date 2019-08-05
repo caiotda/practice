@@ -1,10 +1,23 @@
 import React from 'react';
+import Style from './TodoItem.module.css'
 
-const ToDoItem = props => (
-        <li onClick={ () => props.clicked(props.index)}>
+
+
+const ToDoItem = props => {
+
+    let styleTask;
+    props.done ?  styleTask = Style.doneTask : styleTask = Style.task;
+
+    return (
+        <li 
+            className={styleTask}
+        >
             {props.item}
-            <button onClick={() => props.clicked(props.index)}> - </button>
+            <input
+                onClick={() => props.clicked(props.index)}
+                type="checkbox"></input>
         </li>
-)
+    )
+}
 
 export default ToDoItem;
