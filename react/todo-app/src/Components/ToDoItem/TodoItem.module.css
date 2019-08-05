@@ -1,0 +1,15 @@
+.task, .doneTask {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 70%;
+    list-style-type: none;
+    border-bottom: 1px solid #dedede;
+}
+
+.doneTask {
+    text-decoration: line-through;
+    color: #dedede;
+}
