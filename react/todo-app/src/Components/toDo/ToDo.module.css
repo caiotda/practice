@@ -1,5 +1,22 @@
 .listContainer {
-  background-color: #455169;
-  width: 100vw;
+  /* margin:1em; */
+  border-radius: 40px;
+  background-color:#fefefe;
+  color: #121212;
+  width: 95vw;
   height: 70vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin:20px;
+  width: 100%;
 }
