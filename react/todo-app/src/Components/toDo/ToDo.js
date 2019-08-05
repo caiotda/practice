@@ -8,17 +8,20 @@ const ToDo = (props) => {
     const [list, updateList] = useState(['Limpar a casa', 'Estudar React']);
 
     const removeTaskHandler = (index) => {
-        console.log(index);
         let newList = [...list];
         newList.splice(index, 1);
         updateList(newList);
     }
 
     const addTaskHandler = (e) => {
+        e.preventDefault(); // prevents form from refreshing the page
         const text = e.target.parentNode.firstChild.value;
-        const newList = [...list];
-        newList.push(text);
-        updateList(newList);
+
+        if (text.length > 0) {
+            const newList = [...list];
+            newList.push(text);
+            updateList(newList);
+        }
     }
 
     let toDo = list.map( (task, index) => 
