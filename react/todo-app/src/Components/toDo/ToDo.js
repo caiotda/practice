@@ -1,21 +1,20 @@
-import React, { useState, Fragment } from 'react';
+import React from 'react';
 import ToDoItem from '../ToDoItem/ToDoItem';
 import InputText from '../InputText/InputText';
-import Header from '../Header/Header'
 import Style from './ToDo.module.css';
 
 // TODO : mover o estado pro App.js
 
 const ToDo = (props) => {
 
-    const [list, updateList] = useState([{value: 'Study React', done: false}]);
+    
 
     const removeTaskHandler = (index) => {
         console.log('To sendo chamado!');
-        let newList = [...list];
+        let newList = [...props.list];
         console.log(newList[0]);
         newList[index].done = !newList[index].done;
-        updateList(newList);
+        props.updateList(newList);
     }
 
     const addTaskHandler = (e) => {
@@ -23,13 +22,13 @@ const ToDo = (props) => {
         const text = e.target.parentNode.firstChild.value;
 
         if (text.length > 0) {
-            const newList = [...list];
+            const newList = [...props.list];
             newList.push({value: text, done: false});
-            updateList(newList);
+            props.updateList(newList);
         }
     }
 
-    let toDo = list.map( (task, index) => 
+    let toDo = props.list.map( (task, index) => 
         <ToDoItem 
             item={task.value}
             clicked={removeTaskHandler}
@@ -39,20 +38,14 @@ const ToDo = (props) => {
         />
     )
     return (
-        <Fragment>
-            <Header
-              title="ToDo"
-              count={list.length}
+        <div className={Style.listContainer}>
+            <ul className={Style.list}>
+                {toDo}
+            </ul>
+            <InputText 
+                clicked={addTaskHandler}
             />
-            <div className={Style.listContainer}>
-                <ul className={Style.list}>
-                    {toDo}
-                </ul>
-                <InputText 
-                    clicked={addTaskHandler}
-                />
-            </div>
-        </Fragment>
+        </div>
     )
 }
 
