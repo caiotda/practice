@@ -3,11 +3,8 @@ import ToDoItem from '../ToDoItem/ToDoItem';
 import InputText from '../InputText/InputText';
 import Style from './ToDo.module.css';
 
-// TODO : mover o estado pro App.js
 
 const ToDo = (props) => {
-
-    
 
     const removeTaskHandler = (index) => {
         console.log('To sendo chamado!');
@@ -45,6 +42,7 @@ const ToDo = (props) => {
             <InputText 
                 clicked={addTaskHandler}
             />
+        <button onClick={props.cleanDoneTasks}>Limpar tarefas</button>
         </div>
     )
 }
