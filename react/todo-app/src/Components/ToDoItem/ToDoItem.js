@@ -22,7 +22,6 @@ const ToDoItem = props => {
                 onClick={() => props.clicked(props.index)}
                 type="checkbox"
                 ref={myRef}
-
             />
         </li>
     )

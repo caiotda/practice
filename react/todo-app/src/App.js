@@ -15,7 +15,6 @@ function App() {
     const newTodo = clone.filter(item => !item.done);
     const newDoneTasks = clone.filter(item => item.done); // preciso preencher com as tarefas que ja estavam prontas, puxo do estado
     const doneTasks = [...doneList].concat(newDoneTasks);
-    console.log(newTodo, doneTasks);
 
     updateToDoList(newTodo);
     updateDoneList(doneTasks);

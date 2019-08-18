@@ -7,9 +7,7 @@ import Style from './ToDo.module.css';
 const ToDo = (props) => {
 
     const removeTaskHandler = (index) => {
-        console.log('To sendo chamado!');
         let newList = [...props.list];
-        console.log(newList[0]);
         newList[index].done = !newList[index].done;
         props.updateList(newList);
     }
