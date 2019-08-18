@@ -40,7 +40,7 @@ const ToDo = (props) => {
             <InputText 
                 clicked={addTaskHandler}
             />
-        <button onClick={props.cleanDoneTasks}>Limpar tarefas</button>
+        <button onClick={props.cleanDoneTasks}>clean done tasks</button>
         </div>
     )
 }
