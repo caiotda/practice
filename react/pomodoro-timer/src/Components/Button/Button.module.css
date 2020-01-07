@@ -1,0 +1,9 @@
+.stop {
+    background-color: rgb(224, 23, 23);
+    color: white;
+}
+
+.go {
+    background-color: green;
+    color:white;
+}

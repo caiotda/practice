@@ -1,0 +1,21 @@
+.buttons{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-around;
+    border: 1px dashed red;
+    margin: 10px 0;
+    box-sizing: inherit;
+}
+
+.container {
+    padding: 10px 0;
+    height: 700px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 70vw;
+    margin: auto;
+}
