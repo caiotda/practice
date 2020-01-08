@@ -44,7 +44,7 @@ export default function Timer(props) {
 
     const checkTime = () => {
         if(timer === props.time*60) {
-            alert(alertText[props]);
+            alert(alertText[props.time]);
             updateTimer(0);
         }
     }
