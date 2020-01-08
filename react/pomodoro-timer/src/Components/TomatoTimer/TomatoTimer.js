@@ -31,18 +31,22 @@ const TomatoTimer = (props) => {
     const togglePauseHandler = () => {
         togglePaused(prev => !prev)
     }
+
+    const setTimerDurationHandler = (newTime) => {
+        setTime(newTime);
+    }
     
     return (
         <div className={style.container}>
             <section className={style.buttons}>
-                <Button>Pomodoro</Button>
-                <Button>Short Break</Button>
-                <Button>Long Break</Button>
+                <Button click={() => setTimerDurationHandler(25)}>Pomodoro</Button>
+                <Button click={() => setTimerDurationHandler(5)}>Short Break</Button>
+                <Button click={() => setTimerDurationHandler(10)}>Long Break</Button>
             </section>
             <Timer 
                 start={started}
                 continue={paused}
-                time={5}/>
+                time={time}/>
             <section className={style.buttons}>
                 <Button click={toggleStartHandler}>{firstText}</Button>
                 <Button click={togglePauseHandler}>{secondText}</Button>
