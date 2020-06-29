@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão {{ question.id }}</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="/polls/">Home</a>
+            </li>
+        </ul>
+    </nav>
+    <section>
+        <h1>{{question.question_text}}</h1>
+        {% if error_message%}
+            <p>
+                <strong>{{ error_message }}</strong>
+            </p>
+        {% endif %}
+        <form action="{%url 'polls:vote' question.id%}" method="post">
+            {% csrf_token %} {% comment  %} Isso é algo de criptografia do formulario
+            {% endcomment %}
+            {% for choice in question.choice_set.all %}
+                <input type="radio" name="choice" id="choice{{forloop.counter}}" value="{{choice.id}}">
+                <label for="choice{{ forloop.counter }}">
+                    {{choice.choice_text}}
+                </label>
+            <br />
+            {% endfor %}
+            <input type="submit" value="vote" />
+        </form>
+        <ul>
+        </ul>
+    </section>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+    <title>Django és fueda</title>
+</head>
+<body>
+    {% if latest_question_list %}
+        <ul>
+        {% for question in latest_question_list %}
+            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+            {% comment %}
+             O que isso faz basicamente é ir 
+            no polls/urls.py  e procurar uma rota com o 
+            nome 'detail', dai passar o question.id como 
+            argumento
+            {% endcomment %}
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+</body>
+</html>
+
+
+
+{% comment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Django és fueda</title>
+</head>
+<body>
+    {% if latest_question_list %}
+        <ul>
+        {% for question in latest_question_list %}
+            <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
+             O que isso faz basicamente é ir 
+            no polls/urls.py  e procurar uma rota com o 
+            nome 'detail', dai passar o question.id como 
+            argumento
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+</body>
+</html>
+
+{% comment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Django és fueda</title>
+</head>
+<body>
+    {% if latest_question_list %}
+        <ul>
+        {% for question in latest_question_list %}
+            <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
+             O que isso faz basicamente é ir 
+            no polls/urls.py  e procurar uma rota com o 
+            nome 'detail', dai passar o question.id como 
+            argumento
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+</body>
+</html>
+
+Nesse caso a gente está usando urls sem name spacing:
+A ideia do Djando é termos views em apps pouco acopladas, então o que acontece se dois apps tiverem uma url com o nome detail? Por isso surge a necessidade de name spacing; abaixo usamos
+{% endcomment %}
+
